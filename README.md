@@ -15,7 +15,7 @@ Then in package.json:
   }
 ```
 
-This assumes that code can use Node globals unless it is a `frontend` directory.
+This assumes that code can use Node globals unless it is in a `frontend` directory.
 
 Note that `root` and `ignorePatterns` are not required but `root` is useful to prevent ESLint from search for more config files
 and `ignorePatterns` is often useful to ignore files.
