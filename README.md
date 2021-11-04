@@ -64,10 +64,10 @@ In `eslintConfig` in package.json:
 Instead, if there are no JS files in the project directory that require Node:
 
 ```json
-  "env": {
-    "node": false,
-    "browser": true
-  },
+"env": {
+  "node": false,
+  "browser": true
+}
 ```
 
 ## Why not eslint-babel?
