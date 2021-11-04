@@ -26,7 +26,7 @@ module.exports = {
       },
     },
     {
-      files: ["frontend/**"],
+      files: ["**/frontend/**"],
       env: {
         browser: true,
       },
