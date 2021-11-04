@@ -4,20 +4,34 @@
 
 module.exports = {
   env: {
+    // es6 seems to be needed for Promise
     es6: true,
+    node: true,
   },
   root: true,
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module",
-    parserOptions: {
-      ecmaFeatures: {
-        jsx: true,
-      },
+    ecmaFeatures: {
+      jsx: true,
     },
   },
   reportUnusedDisableDirectives: true,
   extends: ["eslint:all", "prettier", "plugin:import/recommended"],
+  overrides: [
+    {
+      files: ["**/*.test.*"],
+      env: {
+        jest: true,
+      },
+    },
+    {
+      files: ["frontend/**"],
+      env: {
+        browser: true,
+      },
+    },
+  ],
   rules: {
     // .js extension needed for relative imports
     "import/extensions": ["error", "ignorePackages"],
