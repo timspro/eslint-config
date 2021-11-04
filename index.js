@@ -12,8 +12,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module",
-    // babel parser normally requires a config file
-    requireConfigFile: false,
+    // need an empty config file to support jsx apparently
+    // requireConfigFile: false,
   },
   reportUnusedDisableDirectives: true,
   extends: ["eslint:all", "prettier", "plugin:import/recommended"],
