@@ -17,7 +17,7 @@ Then in package.json:
 
 This assumes that code can use Node globals unless it is in a `frontend` directory.
 
-Note that `root` and `ignorePatterns` are not required but `root` is useful to prevent ESLint from search for more config files
+Note that `root` and `ignorePatterns` are not required but `root` is useful to prevent ESLint from searching for more config files
 and `ignorePatterns` is often useful to ignore files.
 
 ## React
@@ -26,7 +26,7 @@ To fully support React/JSX, install:
 
 `npm install --save-dev eslint-plugin-react`
 
-Then in package.json:
+Then in `eslintConfig` in package.json:
 
 ```json
 "extends": [
@@ -44,6 +44,8 @@ Because `null` is often used in React code, you may want to disable the warning 
 ```
 
 ## Make src directory use "browser" globals instead of "node" globals
+
+In `eslintConfig` in package.json:
 
 ```json
 "overrides": [
