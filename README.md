@@ -30,8 +30,7 @@ Then in `eslintConfig` in package.json:
 
 ```json
 "extends": [
-  "@tim-code",
-  "plugin:react/recommended"
+  "@tim-code"
 ]
 ```
 
