@@ -7,8 +7,7 @@ Then in package.json:
 ```json
   "eslintConfig": {
     "extends": [
-      "@tim-code",
-      "plugin:react/recommended"
+      "@tim-code"
     ],
     "root": true,
     "ignorePatterns": []
@@ -30,7 +29,8 @@ Then in `eslintConfig` in package.json:
 
 ```json
 "extends": [
-  "@tim-code"
+  "@tim-code",
+  "plugin:react/recommended"
 ]
 ```
 
