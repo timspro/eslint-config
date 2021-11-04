@@ -7,13 +7,14 @@ module.exports = {
     es6: true,
   },
   root: true,
-  // may not be strictly required depending on configuration but in general babel parser is just better
-  parser: "@babel/eslint-parser",
   parserOptions: {
     ecmaVersion: 2020,
     sourceType: "module",
-    // need an empty config file to support jsx apparently
-    // requireConfigFile: false,
+    parserOptions: {
+      ecmaFeatures: {
+        jsx: true,
+      },
+    },
   },
   reportUnusedDisableDirectives: true,
   extends: ["eslint:all", "prettier", "plugin:import/recommended"],

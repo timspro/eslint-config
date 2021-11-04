@@ -1,13 +1,11 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "",
   "main": "",
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": ">= 7",
-    "@babel/eslint-parser": ">= 7",
     "eslint-config-prettier": ">= 8"
   },
   "peerDependencies": {
