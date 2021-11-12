@@ -65,6 +65,9 @@ module.exports = {
     // if each statement is one line, 15 statements can still be reasonable
     "max-statements": ["error", 15],
 
+    // unsure
+    "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
+
     // rule is too idealistic
     camelcase: "off", // useful to allow non-camelcase for compatibility like destructuring JSON
     "sort-keys": "off", // too burdensome; doesn't affect order of destructured properties i.e. ({b, a}) => ({a, b}) would be fine
@@ -85,5 +88,6 @@ module.exports = {
     "no-undefined": "off", // actually undefined should be used over null
     "capitalized-comments": "off", // comments are not always sentences
     "prefer-named-capture-group": "off", // named capture groups are too new
+    "no-continue": "off", // continue is a useful language feature
   },
 }
