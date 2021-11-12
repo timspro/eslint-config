@@ -65,9 +65,6 @@ module.exports = {
     // if each statement is one line, 15 statements can still be reasonable
     "max-statements": ["error", 15],
 
-    // tolerable? perhaps even good ideas?
-    // no-underscore-dangle: "off" // does not apply to single underscore
-
     // rule is too idealistic
     camelcase: "off", // useful to allow non-camelcase for compatibility like destructuring JSON
     "sort-keys": "off", // too burdensome; doesn't affect order of destructured properties i.e. ({b, a}) => ({a, b}) would be fine
@@ -75,6 +72,7 @@ module.exports = {
     "no-magic-numbers": "off", // does not allow 1, 2, -1; also sometimes noisy to name every constant (for example in time calculations)
     "id-length": "off", // single character variables can sometimes be useful: i, j, x, y, $, _
     "no-plusplus": "off", // ++ is too common of a language feature (C++)
+    "no-underscore-dangle": "off", // difficult to come up with other names for named default parameters
 
     // rule conflicts with another tool
     "one-var": "off", // with Prettier, comma appears on the same line as declaration, making code less readable
