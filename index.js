@@ -20,7 +20,7 @@ module.exports = {
   extends: ["eslint:all", "prettier", "plugin:import/recommended"],
   overrides: [
     {
-      files: ["**/*.test.*"],
+      files: ["**/*.test.*", "**/test/**"],
       env: {
         jest: true,
       },
@@ -89,5 +89,6 @@ module.exports = {
     "capitalized-comments": "off", // comments are not always sentences
     "prefer-named-capture-group": "off", // named capture groups are too new
     "no-continue": "off", // continue is a useful language feature
+    "no-inline-comments": "off", // not adhered to in this file for example
   },
 }
