@@ -1,7 +1,3 @@
-/* eslint-disable no-inline-comments */
-/* eslint-disable line-comment-position */
-/* global module */
-
 module.exports = {
   env: {
     // es6 seems to be needed for Promise
@@ -90,5 +86,6 @@ module.exports = {
     "prefer-named-capture-group": "off", // named capture groups are too new
     "no-continue": "off", // continue is a useful language feature
     "no-inline-comments": "off", // not adhered to in this file for example
+    "line-comment-position": "off", // relates to above rule
   },
 }

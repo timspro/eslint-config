@@ -1,8 +1,8 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "0.5.11",
+  "version": "0.5.14",
   "description": "",
-  "main": "",
+  "main": ".eslintrc.js",
   "author": "",
   "license": "MIT",
   "dependencies": {
