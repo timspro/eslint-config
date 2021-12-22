@@ -58,8 +58,8 @@ module.exports = {
     "multiline-comment-style": ["error", "separate-lines"],
     // errors need to be logged somehow
     "no-console": ["error", { allow: ["error"] }],
-    // if each statement is one line, 15 statements can still be reasonable
-    "max-statements": ["error", 15],
+    // max 10 statements is way too low
+    "max-statements": ["error", 20],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
