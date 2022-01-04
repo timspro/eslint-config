@@ -60,6 +60,8 @@ module.exports = {
     "no-console": ["error", { allow: ["error"] }],
     // max 10 statements is way too low
     "max-statements": ["error", 20],
+    // default is 50 lines which is fine but adding comments or blanks should not trigger this warning
+    "max-lines-per-function": ["error", { max: 50, skipBlankLines: true, skipComments: true }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
