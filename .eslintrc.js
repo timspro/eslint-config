@@ -89,5 +89,6 @@ module.exports = {
     "no-continue": "off", // continue is a useful language feature
     "no-inline-comments": "off", // not adhered to in this file for example
     "line-comment-position": "off", // relates to above rule
+    "no-loop-func": "off", // this is only a concern with var declarations
   },
 }
