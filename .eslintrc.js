@@ -62,6 +62,8 @@ module.exports = {
     "max-statements": ["error", 20],
     // default is 50 lines which is fine but adding comments or blanks should not trigger this warning
     "max-lines-per-function": ["error", { max: 50, skipBlankLines: true, skipComments: true }],
+    // allow mix of reassigned and const variables
+    "prefer-const": ["error", { destructuring: "all" }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
