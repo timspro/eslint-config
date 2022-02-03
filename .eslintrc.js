@@ -58,8 +58,6 @@ module.exports = {
     "multiline-comment-style": ["error", "separate-lines"],
     // errors need to be logged somehow
     "no-console": ["error", { allow: ["error"] }],
-    // max 10 statements is way too low
-    "max-statements": ["error", 20],
     // default is 50 lines which is fine but adding comments or blanks should not trigger this warning
     "max-lines-per-function": ["error", { max: 50, skipBlankLines: true, skipComments: true }],
     // allow mix of reassigned and const variables
@@ -76,6 +74,7 @@ module.exports = {
     "id-length": "off", // single character variables can sometimes be useful: i, j, x, y, $, _
     "no-plusplus": "off", // ++ is too common of a language feature (C++)
     "no-underscore-dangle": "off", // difficult to come up with other names for named default parameters
+    "max-statements": "off", // max 10 statements is way too low; unclear why number of statements is a good measurement
 
     // rule conflicts with another tool
     "one-var": "off", // with Prettier, comma appears on the same line as declaration, making code less readable
