@@ -67,7 +67,7 @@ module.exports = {
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
 
     // rule is too idealistic
-    camelcase: "off", // useful to allow non-camelcase for compatibility like destructuring JSON
+    camelcase: "off", // useful to allow non-camel case for compatibility like destructuring JSON
     "sort-keys": "off", // too burdensome; doesn't affect order of destructured properties i.e. ({b, a}) => ({a, b}) would be fine
     "no-param-reassign": "off", // a common pattern is to coerce parameters; noisy to rename parameters slightly differently
     "no-magic-numbers": "off", // does not allow 1, 2, -1; also sometimes noisy to name every constant (for example in time calculations)
@@ -92,5 +92,6 @@ module.exports = {
     "no-inline-comments": "off", // not adhered to in this file for example
     "line-comment-position": "off", // relates to above rule
     "no-loop-func": "off", // this is only a concern with var declarations
+    "max-classes-per-file": "off", // one class per file discourages small classes
   },
 }
