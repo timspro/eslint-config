@@ -59,7 +59,7 @@ module.exports = {
     // errors need to be logged somehow
     "no-console": ["error", { allow: ["error"] }],
     // default is 50 lines which is fine but adding comments or blanks should not trigger this warning
-    "max-lines-per-function": ["error", { max: 50, skipBlankLines: true, skipComments: true }],
+    "max-lines-per-function": ["error", { max: 75, skipBlankLines: true, skipComments: true }],
     // allow mix of reassigned and const variables
     "prefer-const": ["error", { destructuring: "all" }],
 

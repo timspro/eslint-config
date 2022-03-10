@@ -1,6 +1,6 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "0.6.6",
+  "version": "0.7.0",
   "description": "",
   "main": ".eslintrc.js",
   "author": "",
