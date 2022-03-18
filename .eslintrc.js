@@ -93,5 +93,6 @@ module.exports = {
     "line-comment-position": "off", // relates to above rule
     "no-loop-func": "off", // this is only a concern with var declarations
     "max-classes-per-file": "off", // one class per file discourages small classes
+    "lines-between-class-members": "off", // discourages smaller classes
   },
 }
