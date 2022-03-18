@@ -58,7 +58,8 @@ module.exports = {
     "multiline-comment-style": ["error", "separate-lines"],
     // errors need to be logged somehow
     "no-console": ["error", { allow: ["error"] }],
-    // default is 50 lines which is fine but adding comments or blanks should not trigger this warning
+    // default is 50 lines which is sometimes limiting with Prettier's formatting (parameter destructuring can take up 10 lines for example)
+    // adding comments or blanks should not trigger this warning
     "max-lines-per-function": ["error", { max: 75, skipBlankLines: true, skipComments: true }],
     // allow mix of reassigned and const variables
     "prefer-const": ["error", { destructuring: "all" }],
@@ -75,7 +76,7 @@ module.exports = {
     "no-plusplus": "off", // ++ is too common of a language feature (C++)
     "no-underscore-dangle": "off", // difficult to come up with other names for named default parameters
     "max-statements": "off", // max 10 statements is way too low; unclear why number of statements is a good measurement
-    "class-methods-use-this": "off", // possible to want a possible static method to be called like an instance method
+    "class-methods-use-this": "off", // allow a static method to be called like an instance method
 
     // rule conflicts with another tool
     "one-var": "off", // with Prettier, comma appears on the same line as declaration, making code less readable
