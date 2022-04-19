@@ -63,8 +63,8 @@ module.exports = {
     "max-lines-per-function": ["error", { max: 75, skipBlankLines: true, skipComments: true }],
     // allow mix of reassigned and const variables
     "prefer-const": ["error", { destructuring: "all" }],
-    // allow range
-    yoda: ["error", { exceptRange: true }],
+    // never allow "yoda" conditions except for range
+    yoda: ["error", "never", { exceptRange: true }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
