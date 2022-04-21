@@ -65,6 +65,8 @@ module.exports = {
     "prefer-const": ["error", { destructuring: "all" }],
     // never allow "yoda" conditions except for range
     yoda: ["error", "never", { exceptRange: true }],
+    // unclear why assignment expressions cannot be used
+    "prefer-destructuring": ["error", { AssignmentExpression: { array: false } }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
