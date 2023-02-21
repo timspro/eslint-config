@@ -81,6 +81,7 @@ module.exports = {
     "no-underscore-dangle": "off", // difficult to come up with other names for named default parameters
     "max-statements": "off", // max 10 statements is way too low; unclear why number of statements is a good measurement
     "class-methods-use-this": "off", // allow a static method to be called like an instance method
+    "arrow-body-style": "off", // does not allow braces to be used with a multi-line fat arrow expression
 
     // rule conflicts with another tool
     "one-var": "off", // with Prettier, comma appears on the same line as declaration, making code less readable
