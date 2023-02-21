@@ -45,6 +45,12 @@ module.exports = {
         message:
           'Usage of "null" is discouraged except when used because of legacy APIs; use "undefined" instead',
       },
+      {
+        selector:
+          ":matches(IfStatement, ConditionalExpression, [operator='!'], [operator='&&'], [operator='||']) > Identifier",
+        message:
+          "boolean expressions with naked identifiers are discouraged; cast to a Boolean instead to check for truthiness",
+      },
     ],
 
     // modified rules
@@ -87,6 +93,7 @@ module.exports = {
     "one-var": "off", // with Prettier, comma appears on the same line as declaration, making code less readable
     "sort-imports": "off", // rely on IDE to sort imports; IDE sorts capitalizations differently than eslint expects
     "new-cap": "off", // React functions can begin with capital letter
+    "no-extra-boolean-cast": "off", // boolean casts are used to denote truthiness check
 
     // bad rules
     "init-declarations": "off", // doesn't make sense for let and subsequent assignment in if/else; const implies this rule anyway
