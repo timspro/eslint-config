@@ -70,6 +70,7 @@ module.exports = {
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
+    "no-nested-ternary": "off", // ideally would allow just two levels of nesting; saves quite a bit of code
 
     // rule is too idealistic
     camelcase: "off", // useful to allow non-camel case for compatibility like destructuring JSON
