@@ -67,6 +67,8 @@ module.exports = {
     yoda: ["error", "never", { exceptRange: true }],
     // unclear why assignment expressions cannot be used
     "prefer-destructuring": ["error", { AssignmentExpression: { array: false } }],
+    // 300 lines is too low
+    "max-lines": ["error", { max: 500 }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
