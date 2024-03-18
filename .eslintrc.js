@@ -36,6 +36,15 @@ module.exports = {
     "import/no-named-as-default-member": "off",
     "import/no-named-as-default": "off",
 
+    // functions that return JSX seem to trigger this but the functions aren't necessarily components themselves
+    "react/display-name": "off",
+    // much easier to read some punctuation such as " and ' versus the escaped forms &quot; and &apos;
+    "react/no-unescaped-entities": "off",
+    // prop types is not necessary
+    "react/prop-types": "off",
+    // requiring React is no longer necessary
+    "react/react-in-jsx-scope": "off",
+
     // null should be avoided entirely if possible
     "no-restricted-syntax": [
       "error",
@@ -56,11 +65,13 @@ module.exports = {
     "func-style": ["error", "declaration", { allowArrowFunctions: true }],
     // matches default IDE shortcut for multiline comments
     "multiline-comment-style": ["error", "separate-lines"],
-    // errors need to be logged somehow
-    "no-console": ["error", { allow: ["error"] }],
     // default is 50 lines which is sometimes limiting with Prettier's formatting (parameter destructuring can take up 10 lines for example)
     // adding comments or blanks should not trigger this warning
-    "max-lines-per-function": ["error", { max: 75, skipBlankLines: true, skipComments: true }],
+    // doubled from 75 to allow almost all usages in pluto where it was commonly disabled
+    "max-lines-per-function": [
+      "error",
+      { max: 150, skipBlankLines: true, skipComments: true },
+    ],
     // allow mix of reassigned and const variables
     "prefer-const": ["error", { destructuring: "all" }],
     // never allow "yoda" conditions except for range
@@ -68,7 +79,7 @@ module.exports = {
     // unclear why assignment expressions cannot be used
     "prefer-destructuring": ["error", { AssignmentExpression: { array: false } }],
     // 300 lines is too low
-    "max-lines": ["error", { max: 500 }],
+    "max-lines": ["error", { max: 600 }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
@@ -103,5 +114,10 @@ module.exports = {
     "no-loop-func": "off", // this is only a concern with var declarations
     "max-classes-per-file": "off", // one class per file discourages small classes
     "lines-between-class-members": "off", // discourages smaller classes
+    "guard-for-in": "off", // warning about language feature; reasons to avoid it are too theoretical: works fine in nearly all cases
+
+    // disabled too often
+    "no-console": "off", // console error was already allowed; when is console.log actually bad?
+    "no-await-in-loop": "off", // warning about language feature, unavoidable
   },
 }

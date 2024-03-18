@@ -1,15 +1,15 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "0.8.1",
+  "version": "1.0.0",
   "description": "",
   "main": ".eslintrc.js",
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "eslint-config-prettier": ">= 8"
+    "eslint-config-prettier": ">= 9"
   },
   "peerDependencies": {
-    "eslint": ">= 7",
+    "eslint": ">= 8",
     "eslint-plugin-import": ">= 2"
   },
   "publishConfig": {

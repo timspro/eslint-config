@@ -1,6 +1,6 @@
 # eslint-config
 
-`npm install @tim-code/eslint-config`
+`npm install --save-dev @tim-code/eslint-config`
 
 Then in package.json:
 
@@ -16,8 +16,7 @@ Then in package.json:
 
 This assumes that code can use Node globals unless it is in a `frontend` directory. See below to change this.
 
-Note that `root` and `ignorePatterns` are not required but `root` is useful to prevent ESLint from searching for more config files
-and `ignorePatterns` is often useful to ignore files.
+Note that `root` and `ignorePatterns` are not required but `root` is useful to prevent ESLint from searching for more config files and `ignorePatterns` is often eventually needed to ignore files such as a build directory.
 
 ## React
 
