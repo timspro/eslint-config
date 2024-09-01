@@ -50,7 +50,7 @@ module.exports = {
       "error",
       {
         selector:
-          ":not(BinaryExpression:matches([operator='!=='], [operator='==='])) > Literal[value=null]",
+          ":not(BinaryExpression:matches([operator='!=='],[operator='===']), CallExpression[callee.object.name='Object'][callee.property.name='create']) > Literal[value=null]",
         message:
           'Usage of "null" is discouraged except when used because of legacy APIs; use "undefined" instead',
       },
