@@ -88,6 +88,7 @@ module.exports = {
     // rule is too idealistic
     camelcase: "off", // useful to allow non-camel case for compatibility like destructuring JSON
     "sort-keys": "off", // too burdensome; doesn't affect order of destructured properties i.e. ({b, a}) => ({a, b}) would be fine
+    "sort-vars": "off", // let results, index
     "no-param-reassign": "off", // a common pattern is to coerce parameters; noisy to rename parameters slightly differently
     "no-magic-numbers": "off", // does not allow 1, 2, -1; also sometimes noisy to name every constant (for example in time calculations)
     "id-length": "off", // single character variables can sometimes be useful: i, j, x, y, $, _
