@@ -1,6 +1,6 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "",
   "main": ".eslintrc.js",
   "author": "",
@@ -9,7 +9,7 @@
     "eslint-config-prettier": ">= 9"
   },
   "peerDependencies": {
-    "eslint": ">= 8",
+    "eslint": ">=8 <9",
     "eslint-plugin-import": ">= 2"
   },
   "publishConfig": {
