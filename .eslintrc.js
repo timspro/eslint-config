@@ -63,8 +63,6 @@ module.exports = {
     "no-empty-function": ["error", { allow: ["arrowFunctions"] }],
     // function keyword is more readable in general but "fat arrow" is more concise; disables function(){} syntax
     "func-style": ["error", "declaration", { allowArrowFunctions: true }],
-    // matches default IDE shortcut for multiline comments
-    "multiline-comment-style": ["error", "separate-lines"],
     // default is 50 lines which is sometimes limiting with Prettier's formatting (parameter destructuring can take up 10 lines for example)
     // adding comments or blanks should not trigger this warning
     // doubled from 75 to allow almost all usages in pluto where it was commonly disabled
@@ -80,6 +78,8 @@ module.exports = {
     "prefer-destructuring": ["error", { AssignmentExpression: { array: false } }],
     // 300 lines is too low
     "max-lines": ["error", { max: 600 }],
+    // allow bracket notation for capitalized keys, which are more likely to correlate with an object being used as a map
+    "dot-notation": ["error", { allowPattern: "^[A-Z]" }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
@@ -116,6 +116,7 @@ module.exports = {
     "max-classes-per-file": "off", // one class per file discourages small classes
     "lines-between-class-members": "off", // discourages smaller classes
     "guard-for-in": "off", // warning about language feature; reasons to avoid it are too theoretical: works fine in nearly all cases
+    "multiline-comment-style": "off", // using block style comments is easiest for writing a paragraph
 
     // disabled too often
     "no-console": "off", // console error was already allowed; when is console.log actually bad?
