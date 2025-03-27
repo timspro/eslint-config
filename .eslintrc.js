@@ -85,7 +85,7 @@ module.exports = {
     // although using block style comments is easiest for writing a paragraph, JSDoc is usually preferred
     // when writing such comments during brainstorming, just disable the rule
     // most of the time, want to discourage non-JSDoc block style comments in production
-    "multiline-comment-style": "separate-lines",
+    "multiline-comment-style": ["error", "separate-lines"],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
