@@ -82,6 +82,10 @@ module.exports = {
     "dot-notation": ["error", { allowPattern: "^[A-Z]" }],
     // multi assign is confusing with declarations but non-declarations are okay
     "no-multi-assign": ["error", { ignoreNonDeclaration: true }],
+    // although using block style comments is easiest for writing a paragraph, JSDoc is usually preferred
+    // when writing such comments during brainstorming, just disable the rule
+    // most of the time, want to discourage non-JSDoc block style comments in production
+    "multiline-comment-style": "separate-lines",
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
@@ -118,7 +122,6 @@ module.exports = {
     "max-classes-per-file": "off", // one class per file discourages small classes
     "lines-between-class-members": "off", // discourages smaller classes
     "guard-for-in": "off", // warning about language feature; reasons to avoid it are too theoretical: works fine in nearly all cases
-    "multiline-comment-style": "off", // using block style comments is easiest for writing a paragraph
 
     // disabled too often
     "no-console": "off", // console error was already allowed; when is console.log actually bad?
