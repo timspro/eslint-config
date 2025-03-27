@@ -80,6 +80,8 @@ module.exports = {
     "max-lines": ["error", { max: 600 }],
     // allow bracket notation for capitalized keys, which are more likely to correlate with an object being used as a map
     "dot-notation": ["error", { allowPattern: "^[A-Z]" }],
+    // multi assign is confusing with declarations but non-declarations are okay
+    "no-multi-assign": ["error", { ignoreNonDeclaration: true }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
