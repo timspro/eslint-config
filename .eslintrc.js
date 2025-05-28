@@ -87,8 +87,8 @@ module.exports = {
     // when writing such comments during brainstorming, just disable the rule
     // most of the time, want to discourage non-JSDoc block style comments in production
     "multiline-comment-style": ["error", "separate-lines"],
-    // allow unused vars before a used var in argument list
-    "no-unused-vars": ["error", { args: "after-used" }],
+    // unfortunately can't allow "after-used" for destructuring array
+    // "no-unused-vars": ["error", { ignoreRestSiblings: true }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
