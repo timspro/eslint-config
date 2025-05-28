@@ -66,9 +66,10 @@ module.exports = {
     // default is 50 lines which is sometimes limiting with Prettier's formatting (parameter destructuring can take up 10 lines for example)
     // adding comments or blanks should not trigger this warning
     // doubled from 75 to allow almost all usages in pluto where it was commonly disabled
+    // it is common in Jest tests to trigger this; going to up further to see if that helps, already questionably useful
     "max-lines-per-function": [
       "error",
-      { max: 150, skipBlankLines: true, skipComments: true },
+      { max: 200, skipBlankLines: true, skipComments: true },
     ],
     // allow mix of reassigned and const variables
     "prefer-const": ["error", { destructuring: "all" }],
@@ -86,6 +87,8 @@ module.exports = {
     // when writing such comments during brainstorming, just disable the rule
     // most of the time, want to discourage non-JSDoc block style comments in production
     "multiline-comment-style": ["error", "separate-lines"],
+    // allow unused vars before a used var in argument list
+    "no-unused-vars": ["error", { args: "after-used" }],
 
     // unsure
     "no-labels": "off", // useful to be able to break/continue an outer loop; otherwise have to write more code
