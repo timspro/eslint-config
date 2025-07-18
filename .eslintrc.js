@@ -129,5 +129,6 @@ module.exports = {
     // disabled too often
     "no-console": "off", // console error was already allowed; when is console.log actually bad?
     "no-await-in-loop": "off", // warning about language feature, unavoidable
+    "require-atomic-updates": "off", // variables can change unexpectedly in parallelism due to another thread... this rule is way too noisy though
   },
 }
