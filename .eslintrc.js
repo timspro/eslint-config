@@ -28,6 +28,14 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    "import/resolver": {
+      // default resolver provided by eslint-plugin-import
+      node: {},
+      // "eslint-import-resolver-exports" plugin
+      exports: {},
+    },
+  },
   rules: {
     // .js extension needed for relative imports
     "import/extensions": ["error", "ignorePackages"],

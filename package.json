@@ -1,12 +1,13 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "1.2.4",
+  "version": "1.3.3",
   "description": "",
   "main": ".eslintrc.js",
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "eslint-config-prettier": ">= 9"
+    "eslint-config-prettier": ">= 9",
+    "eslint-import-resolver-exports": "^1.0.0-beta.5"
   },
   "peerDependencies": {
     "eslint": ">=8 <9",
