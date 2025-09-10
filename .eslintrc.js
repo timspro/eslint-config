@@ -20,6 +20,12 @@ module.exports = {
       env: {
         jest: true,
       },
+      rules: {
+        "max-lines": "off", // test files should not be split up based on length
+        "max-lines-per-function": "off", // describe blocks can be quite long; doesn't make sense to split up
+        "no-restricted-syntax": "off", // allow null in tests
+        "require-unicode-regexp": "off", // regexes are pretty common in Jest; useless rule but annoying
+      },
     },
     {
       files: ["**/frontend/**"],
