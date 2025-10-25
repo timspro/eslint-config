@@ -1,17 +1,17 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "",
-  "main": ".eslintrc.js",
+  "main": "eslint.config.js",
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "eslint-config-prettier": ">= 9",
+    "eslint-config-prettier": ">=10",
     "eslint-import-resolver-exports": "^1.0.0-beta.5"
   },
   "peerDependencies": {
-    "eslint": ">=8 <9",
-    "eslint-plugin-import": ">= 2"
+    "eslint": ">=9",
+    "eslint-plugin-import": ">=2"
   },
   "publishConfig": {
     "access": "public"
