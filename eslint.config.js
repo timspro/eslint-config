@@ -1,10 +1,10 @@
 import js from "@eslint/js"
 import prettierConfig from "eslint-config-prettier/flat"
 import importPlugin from "eslint-plugin-import"
+import { defineConfig } from "eslint/config"
 import globals from "globals"
 
-/** @type {import("eslint").Linter.FlatConfig[]} */
-export default [
+export default defineConfig([
   // base: ESLint core + prettier + import/recommended
   js.configs.all,
   prettierConfig,
@@ -168,4 +168,4 @@ export default [
       },
     },
   },
-]
+])

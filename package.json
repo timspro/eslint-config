@@ -1,7 +1,8 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "",
+  "type": "module",
   "main": "eslint.config.js",
   "author": "",
   "license": "MIT",
