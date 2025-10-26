@@ -1,10 +1,11 @@
 import js from "@eslint/js"
 import prettierConfig from "eslint-config-prettier/flat"
 import importPlugin from "eslint-plugin-import"
-import { defineConfig } from "eslint/config"
+import { defineConfig, globalIgnores } from "eslint/config"
 import globals from "globals"
 
 export default defineConfig([
+  globalIgnores(["dist/**", "dist-old/**", ".aws-sam"]),
   // base: ESLint core + prettier + import/recommended
   js.configs.all,
   prettierConfig,
@@ -164,6 +165,7 @@ export default defineConfig([
     files: ["**/frontend/**"],
     languageOptions: {
       globals: {
+        ...Object.fromEntries(Object.keys(globals.node).map((key) => [key, "off"])),
         ...globals.browser,
       },
     },
