@@ -67,6 +67,12 @@ export default defineConfig([
           message:
             'Usage of "null" is discouraged except when used because of legacy APIs; use "undefined" instead',
         },
+        {
+          selector:
+            'VariableDeclarator[init.type="ObjectExpression"][init.properties.length=0]',
+          message:
+            "Initializing a variable to an empty object is indicative of an object-as-map pattern; use `Object.create(null)` instead",
+        },
       ],
 
       // modified rules
