@@ -1,15 +1,15 @@
 import js from "@eslint/js"
 import prettierConfig from "eslint-config-prettier/flat"
-import importPlugin from "eslint-plugin-import"
+import { importX } from "eslint-plugin-import-x"
 import { defineConfig, globalIgnores } from "eslint/config"
 import globals from "globals"
 
 export default defineConfig([
   globalIgnores(["dist/**", "dist-old/**", ".aws-sam"]),
-  // base: ESLint core + prettier + import/recommended
+  // base: ESLint core + prettier + import-x/recommended
   js.configs.all,
   prettierConfig,
-  importPlugin.flatConfigs.recommended,
+  importX.flatConfigs.recommended,
   {
     files: ["**/*.{js,mjs,cjs,jsx,ts,tsx}"],
 
@@ -32,22 +32,13 @@ export default defineConfig([
       reportUnusedDisableDirectives: true,
     },
 
-    settings: {
-      "import/resolver": {
-        // default resolver provided by eslint-plugin-import
-        node: {},
-        // "eslint-import-resolver-exports" plugin
-        exports: {},
-      },
-    },
-
     rules: {
       // .js extension needed for relative imports
-      "import/extensions": ["error", "ignorePackages"],
+      "import-x/extensions": ["error", "ignorePackages"],
       // these rules have poor performance:
-      "import/namespace": "off",
-      "import/no-named-as-default-member": "off",
-      "import/no-named-as-default": "off",
+      "import-x/namespace": "off",
+      "import-x/no-named-as-default-member": "off",
+      "import-x/no-named-as-default": "off",
 
       // functions that return JSX seem to trigger this but the functions aren't necessarily components themselves
       "react/display-name": "off",

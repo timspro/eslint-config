@@ -2,7 +2,7 @@
 
 This config assumes that code can use Node globals unless it is in a `frontend` directory. See below to change this.
 
-Version 2.X.X of this package only supports ESLint 9 (flat config). Use 1.4.X if you are using ESLint 8.
+Version 3.X.X of this package requires ESLint 10+ (flat config) and `eslint-plugin-import-x` as a peer dependency (replacing `eslint-plugin-import`). Use 2.1.X if you need ESLint 9 support, or 1.4.X if you are using ESLint 8.
 
 ## Install
 
