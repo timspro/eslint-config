@@ -1,8 +1,14 @@
 import js from "@eslint/js"
+import vitest from "@vitest/eslint-plugin"
 import prettierConfig from "eslint-config-prettier/flat"
 import { importX } from "eslint-plugin-import-x"
 import { defineConfig, globalIgnores } from "eslint/config"
 import globals from "globals"
+import { builtinModules } from "node:module"
+
+const nodeBuiltins = builtinModules.filter(
+  (name) => !name.startsWith("_") && !name.startsWith("node:")
+)
 
 export default defineConfig([
   globalIgnores(["dist/**", "dist-old/**", ".aws-sam"]),
@@ -39,6 +45,16 @@ export default defineConfig([
       "import-x/namespace": "off",
       "import-x/no-named-as-default-member": "off",
       "import-x/no-named-as-default": "off",
+      // "node:" makes it clear the import is a Node built-in rather than a package
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: nodeBuiltins.map((name) => ({
+            name,
+            message: `Use "node:${name}" instead`,
+          })),
+        },
+      ],
 
       // functions that return JSX seem to trigger this but the functions aren't necessarily components themselves
       "react/display-name": "off",
@@ -97,6 +113,8 @@ export default defineConfig([
       // when writing such comments during brainstorming, just disable the rule
       // most of the time, want to discourage non-JSDoc block style comments in production
       "multiline-comment-style": ["error", "separate-lines"],
+      // eslint-config-prettier turns this off, but "all" never conflicts with Prettier; always use braces
+      curly: ["error", "all"],
       // unfortunately can't allow "after-used" for destructuring array
       // "no-unused-vars": ["error", { ignoreRestSiblings: true }],
 
@@ -142,19 +160,19 @@ export default defineConfig([
       "require-atomic-updates": "off", // variables can change unexpectedly in parallelism due to another thread... this rule is way too noisy though
     },
   },
-  // Jest/test overrides
+  // Test overrides (Vitest assumed; works for Jest as well but no globals)
   {
     files: ["**/*.test.*", "**/*.spec.*", "**/test/**"],
-    languageOptions: {
-      globals: {
-        ...globals.jest,
-      },
-    },
+    plugins: { vitest },
     rules: {
+      // catches focused tests (.only), duplicate titles, expects outside of tests, etc.
+      ...vitest.configs.recommended.rules,
+      "vitest/consistent-test-it": ["error", { fn: "it" }], // don't allow both test() and it()
+      "vitest/require-to-throw-message": "error", // force toThrow() to check error message
       "max-lines": "off", // test files should not be split up based on length
       "max-lines-per-function": "off", // describe blocks can be quite long; doesn't make sense to split up
-      "no-restricted-syntax": "off", // allow null in tests
-      "require-unicode-regexp": "off", // regexes are pretty common in Jest; useless rule but annoying
+      "no-restricted-syntax": "off", // allow null and {} in tests
+      "require-unicode-regexp": "off", // regexes are pretty common in tests; useless rule but annoying
     },
   },
   // frontend/browser overrides

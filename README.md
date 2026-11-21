@@ -4,6 +4,10 @@ This config assumes that code can use Node globals unless it is in a `frontend` 
 
 Version 3.X.X of this package requires ESLint 10+ (flat config) and `eslint-plugin-import-x` as a peer dependency (replacing `eslint-plugin-import`). Use 2.1.X if you need ESLint 9 support, or 1.4.X if you are using ESLint 8.
 
+Version 3.1.X requires `@vitest/eslint-plugin`, which installs `@typescript-eslint/utils`. This version assumes Vitest is used instead of Jest since it drops support for Jest globals.
+
+This config makes use of `no-restricted-imports` and `no-restricted-syntax` rules. If another project implements these, they will overwrite this library's functionality.
+
 ## Install
 
 `npm install --save-dev @tim-code/eslint-config`
@@ -13,6 +17,12 @@ Then create `eslint.config.js` at project root with the following:
 ```js
 export { default } from "@tim-code/eslint-config"
 ```
+
+## Tests
+
+Test files (`*.test.*`, `*.spec.*` and anything under `test/`) are linted with `@vitest/eslint-plugin`. The rules also generally can work for Jest tests since the APIs match (however, no Jest globals support).
+
+Test files may use `null` and `{}`, and have no file or function length limits.
 
 ## React
 

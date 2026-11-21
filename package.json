@@ -1,6 +1,6 @@
 {
   "name": "@tim-code/eslint-config",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "",
   "type": "module",
   "main": "eslint.config.js",
@@ -12,6 +12,7 @@
   },
   "peerDependencies": {
     "@eslint/js": ">=10",
+    "@vitest/eslint-plugin": ">=1.6",
     "eslint": ">=10",
     "eslint-plugin-import-x": ">=4"
   },
